@@ -1,4 +1,16 @@
-# money-changer
+# rupiah-changer
+
+Solve the number of each rupiah bill denominations required to make a given amount.
+
+Live demo can be found [here](https://rupiah-changer.herokuapp.com/)
+
+### Run unit tests
+There will be two .js files that are tested.
+- src\assets\js\moneyChange.js
+- src\assets\js\validRupiah.js
+```
+npm run test:unit
+```
 
 ## Project setup
 ```
@@ -9,26 +21,3 @@ npm install
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

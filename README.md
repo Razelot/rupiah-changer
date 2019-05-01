@@ -3,7 +3,7 @@
 Solves the number of each rupiah bill denominations required to make a given amount.
 The program uses dynamic programming to find a solution.
 
-Live demo can be found [here](https://rupiah-changer.herokuapp.com/)
+Live demo can be found [HERE](https://rupiah-changer.herokuapp.com/)
 
 ## Project setup
 ```

@@ -19,7 +19,7 @@ npm run serve
 There will be two .js files that are tested.
 
 - [src/assets/js/moneyChange.js](src/assets/js/moneyChange.js) contains the dynamic programming solution
-- [src/assetsjs/validRupiah.js](src/assetsjs/validRupiah.js) contains the input validation
+- [src/assets/js/validRupiah.js](src/assets/js/validRupiah.js) contains the input validation
 
 ```
 npm run test:unit

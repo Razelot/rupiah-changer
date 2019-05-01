@@ -57,7 +57,7 @@
                     <fieldset id="result">
                         <legend>Result</legend>
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-12 col-md-6">
                                 <div class="input-group fluid">
                                     <label for="result-amount">
                                         <strong>Amount</strong>

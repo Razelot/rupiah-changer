@@ -1,16 +1,18 @@
 <template>
     <div>
-        <header class="sticky row">
-            <div class="col-sm-12 col-md-10 col-md-offset-1">
-                <h1>Rupiah Changer</h1>
+        <header class="row sticky">
+            <div class="col-sm-12 col-md-11 col-md-offset-1">
+                <h2>
+                    <a href="#">Rupiah Changer</a>
+                </h2>
             </div>
         </header>
         <br>
         <div class="container">
+            <br>
             <div class="row">
                 <div class="col-sm-12 col-md-4 col-md-offset-1">
-                    <br>
-                    <fieldset>
+                    <fieldset id="parameters">
                         <legend>Parameters</legend>
                         <form autocomplete="off" @submit.prevent="calculate">
                             <div class="input-group fluid">
@@ -19,7 +21,7 @@
                                 </label>
                                 <input id="input-amount" v-model="amount" placeholder="Enter rupiah amount to make"
                                     class="is-invalid">
-                                <button class="primary" type="submit">Run</button>
+                                <button class="small primary" type="submit">Run</button>
                             </div>
                         </form>
                         <div class="collapse">
@@ -32,7 +34,7 @@
                                     <li v-for="(denomination, index) in denominations.slice()" :key="'denom-'+index">
                                         <div class="input-group fluid">
                                             <input :value="'Rp'+denomination" readonly>
-                                            <button class="secondary" @click="removeDenom((index))">Del</button>
+                                            <button class="small secondary" @click="removeDenom((index))">Del</button>
                                         </div>
                                     </li>
                                 </ol>
@@ -46,15 +48,13 @@
                                 </label>
                                 <input id="input-denomination" v-model="newDenom"
                                     placeholder="Enter rupiah denomination">
-                                <button class="tertiary">Add</button>
+                                <button class="small tertiary">Add</button>
                             </div>
                         </form>
                     </fieldset>
-                    <br>
                 </div>
                 <div class="col-sm-12 col-md-6">
-                    <br>
-                    <fieldset>
+                    <fieldset id="result">
                         <legend>Result</legend>
                         <div class="row">
                             <div class="col-sm-6">
@@ -96,11 +96,11 @@
                             </div>
                         </div>
                     </fieldset>
-                    <br>
                 </div>
             </div>
+            <br>
         </div>
-        <footer class="sticky">
+        <footer>
             <div class="col-sm col-md-10 col-md-offset-1">
                 <p>Copyright &copy; Ezar Enanda 2019</p>
             </div>
@@ -141,32 +141,34 @@
                 }
             };
         },
-        watch:{
-            amount: function(){
+        watch: {
+            amount: function () {
                 var input = document.querySelector("#input-amount");
                 input.setCustomValidity("");
             },
-            newDenom: function(){
+            newDenom: function () {
                 var input = document.querySelector("#input-denomination");
                 input.setCustomValidity("");
             }
         },
         methods: {
             calculate: function () {
-                const validation = validRupiah(this.amount)
+                const validation = validRupiah(this.amount);
                 var input = document.querySelector("#input-amount");
                 if (!validation.isValid) {
                     input.setCustomValidity("Invalid rupiah format!");
                 } else {
                     input.setCustomValidity("");
                     this.result = moneyChange(validation.value, this.denominations);
+                    var resultEl = document.querySelector("#result");
+                    resultEl.scrollIntoView();
                 }
             },
             removeDenom: function (index) {
                 this.denominations.splice(index, 1);
             },
             addDenom: function () {
-                const validation = validRupiah(this.newDenom)
+                const validation = validRupiah(this.newDenom);
                 var input = document.querySelector("#input-denomination");
                 if (!validation.isValid) {
                     input.setCustomValidity("Invalid rupiah format!");
@@ -175,6 +177,6 @@
                     this.denominations.push(validation.value);
                 }
             }
-        },
+        }
     };
 </script>

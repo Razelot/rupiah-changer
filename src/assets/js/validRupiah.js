@@ -5,6 +5,10 @@ const replace = {
     ',': '.'
 };
 
+/**
+ * 
+ * @param {String} rupiah 
+ */
 export function validRupiah(rupiah) {
     const isValid = pattern.test(rupiah)
 

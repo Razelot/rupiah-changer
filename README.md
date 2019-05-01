@@ -18,8 +18,8 @@ npm run serve
 ### Run unit tests
 There will be two .js files that are tested.
 
-- [src/assets/js/moneyChange.js](src/assets/js/moneyChange.js) Contains the dynamic programming solution
-- [src/assetsjs/validRupiah.js](src/assetsjs/validRupiah.js) Contains the input validation
+- [src/assets/js/moneyChange.js](src/assets/js/moneyChange.js) contains the dynamic programming solution
+- [src/assetsjs/validRupiah.js](src/assetsjs/validRupiah.js) contains the input validation
 
 ```
 npm run test:unit

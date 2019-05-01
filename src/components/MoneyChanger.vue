@@ -78,7 +78,7 @@
                             </ul>
                         </div>
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-12 col-md-6">
                                 <div class="input-group fluid">
                                     <label for="result-total">
                                         <strong>Total</strong>
@@ -86,7 +86,7 @@
                                     <input id="result-total" :value="result.total" readonly>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-12 col-md-6">
                                 <div class="input-group fluid">
                                     <label for="result-remaining">
                                         <strong>Remaining</strong>
